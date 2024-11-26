@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+    <link rel="shortcut icon" href="images/bookmark.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="title text-center">
+              <h1>Bookmarker</h1>
+            </div>
+            <div class="bookMarker">
+              <div class="tilteMain my-4 d-flex align-items-center justify-content-center text-center">
+                <i class="fa-solid fa-bookmark my-i"></i>
+                <h2 class="px-2">Bookmark Your Favorite Sites</h2>
+              </div>
+              <div class="form">
+                <div class="mb-4">
+                  <label for="siteName" class="mb-2"><i class="fa-solid fa-earth-americas  pe-2 my-i"></i></i> Site Name</label>
+                  <input oninput="validationName()" type="text" class="form-control" id="siteName" placeholder="Bookmark Name"/>
+                  <p id="msgName" class="alert alert-danger d-none mt-2">Site name must consist of three letters at least</p>
+                </div>
+                <div class="mb-4">
+                  <label for="siteUrl" class="mb-2"><i class="fa-solid fa-link pe-2  my-i "></i> Site Url</label>
+                  <input oninput="validationUrl()" type="url" class="form-control" id="siteUrl" placeholder="WebSite URL"/>
+                  <p id="msgUrl" class="alert alert-danger d-none mt-2">Site URL must be as URL format</p>
+                </div>
+                <div class="text-center">
+                  <button onclick="addBookMark()" class="btn btn-primary my-btn px-5 mb-3" id="submit">
+                  <i class="fa-solid fa-plus me-2"></i>Add BookMark
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="tabel mt-4">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th >Index</th>
+                    <th >Website Name</th>
+                    <th >Visit</th>
+                    <th >Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="dataTable">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/index.js"></script>
+</body>
+</html>
